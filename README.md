@@ -1,5 +1,7 @@
 # Virtual Pet API
 
+IMPORTANT: Please refer to the course in Instructure Canvas for project full requirements
+
 Now we will take Virtual pet to its logical conclusion! A fully functional MVC application! Your team will choose one of your virtual pet applications and transform it into a backend application with a functional front end! This will test everything you’ve learned up until this point, and will also be your first group project.
 
 ## Required Tasks
