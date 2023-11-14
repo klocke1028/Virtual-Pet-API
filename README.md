@@ -1,35 +1,40 @@
-# Virtual Pet API
+# Virtual Pets API 
 
-IMPORTANT: Please refer to the course in Instructure Canvas for project full requirements
+In this assignment, we will build out an REST API for some virtual pet data. 
 
-Now we will take Virtual pet to its logical conclusion! A fully functional MVC application! Your team will choose one of your virtual pet applications and transform it into a backend application with a functional front end! This will test everything you’ve learned up until this point, and will also be your first group project.
+This could become the foundation if we were to build out the virtual pet app further for more users and potentially a GUI. 
 
-## Required Tasks
 
-### Backend
 
-- Choose which student’s virtual pet will be used for this project.
-- Use the Virtual Pet classes from Virtual Pet Amok as your model. This will probably require substantial modifications, that’s what the team is for!
-- Relate Shelter to Virtual Pet. Allow for more than one shelter, though you still only need one shelter unless you want to get fancy.
-- Make appropriate repos for your model.
-- Make controller endpoints that can do everything your original pets did in Amok. For instance, make an endpoint that will feed all your pets. Make sure you still tick() when you should!
 
-### Frontend
+## Required Tasks 
 
-- Create a frontend that has the following pages:
-  - Shelter view which shows the names and basic stats of a pet. Also should allow you to adopt pets out and call appropriate shelter methods.
-  - Pet view which shows a pet in detail. Also should be capable of running any pet specific methods you have.
-  - Add pet view which allows you to add a new pet. Feel free to incorporate this one directly into the shelter view or pet view if you think it looks better.
-- Use CSS styling and keep a consistent styling throughout the frontend.
-- Use Javascript to interact with your back end.
+You are creating a Virtual Pet API, it’s advised that you don’t build on top of the Virtual Pet Amok assignment. Instead, create a new project using the Spring Initializer
 
-#### Stretch Tasks
+You DO NOT have to code functionality that deals with all or individual pets ex. feedAllPets(), tick(), etc. We are just building out an API for this assignment.
 
-Animation:
-Add Javascript animations to the view.
+No game play interface is required for this assignment.
 
-Make your pets tick in real time:
-Make it so that rather than calling tick() every time you interact with your shelter, tick() gets called every few seconds and updates the view.
+  - Create a project using the Spring Initializer 
+    - With JPA, Web, and H2 as the dependencies 
+  - Create an entity “Virtual Pet” 
+    - Add 4-5 fields that were used to describe the pet in the previous assignments (name, description, hunger, thirst, boredom, etc) 
+  - Create a repository for Virtual Pet 
+  - Create a controller for for Virtual Pet 
+    - In the controller create a method to retrieve all pets 
+    - In the controller create a method to retrieve a single pet by ID 
+    - In the controller create a method to post (add) a new pet to the database - In the controller create a method to delete a pet with the ID 
+  - Create a LoadDatabase class that will auto load 4-5 mock virtual pet data into the database 
+  - Create an error handling message when a pet requested by ID is not found
+  - Using Javascript, create an app that will demonstrate the following features of the API and outputs the results in the console (console.log()) using fetch()
+    - Retrieve all pets in the database 
+    - Retrieve a single pet by ID 
+    - Add a new pet and retrieve that pet 
+    - Delete a pet and check that the pet is no longer present by getting the error handling message
 
-Use your creativity:
-If you think of something and have extra time, feel free to attempt it!
+
+
+
+
+
+
