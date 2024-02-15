@@ -10,6 +10,13 @@ This could become the foundation if we were to build out the virtual pet app fur
 ## Required Tasks 
 
 You are creating a Virtual Pet API, it’s advised that you don’t build on top of the Virtual Pet Amok assignment. Instead, create a new project using the Spring Initializer
+Use the Spring Initializr to create a virtual-pet-api project, including the following dependencies:
+
+Thymeleaf
+Web
+JPA
+H2
+Devtools
 
 You DO NOT have to code functionality that deals with all or individual pets ex. feedAllPets(), tick(), etc. We are just building out an API for this assignment.
 
