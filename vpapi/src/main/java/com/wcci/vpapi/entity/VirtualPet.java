@@ -3,11 +3,14 @@ package com.wcci.vpapi.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class VirtualPet {
@@ -29,6 +32,7 @@ public class VirtualPet {
     @Column(name = "Happiness")
     private Integer happiness;
 
+    @OneToMany(mappedBy = "virtualPet", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<VirtualPet> virtualPets;
 
     public VirtualPet() {
@@ -90,6 +94,26 @@ public class VirtualPet {
 
     public void setHappiness(Integer happiness) {
         this.happiness = happiness;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public List<VirtualPet> getVirtualPets() {
+        return virtualPets;
+    }
+
+
+    public void setVirtualPets(List<VirtualPet> virtualPets) {
+        this.virtualPets = virtualPets;
     }
 
     
