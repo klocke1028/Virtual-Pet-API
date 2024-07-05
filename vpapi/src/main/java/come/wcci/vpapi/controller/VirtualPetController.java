@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.wcci.vpapi.service.VirtualPetService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,10 +30,11 @@ public class VirtualPetController {
 
     @PostMapping
     public ResponseEntity<VirtualPet> addPet(@RequestBody VirtualPet virtualPet) {
-        VirtualPet newPet = virtualPetService.createPet(virtualPet);
-        return new ResponseEntity<>(newPet, HttpStatus.CREATED);
+        VirtualPet createdPet = virtualPetService.createPet(virtualPet);
+        return new ResponseEntity<>(createdPet, HttpStatus.CREATED);
     }
 
+    @DeleteMapping
     public ResponseEntity<Void> removePet(@PathVariable Long id) {
         boolean isRemoved = virtualPetService.removePet(id);
         if (!isRemoved) {
