@@ -14,12 +14,20 @@ public class Populator implements CommandLineRunner {
 
     @Override public void run(String...args) throws Exception {
         virtualPetRepository.deleteAll();
-    }
 
     VirtualPet pet1 = new VirtualPet("Fester", 10, 5, 20);
     VirtualPet pet2 = new VirtualPet("Lydia", 10, 5, 20);
     VirtualPet pet3 = new VirtualPet("Gomez", 10, 5, 20);
     VirtualPet pet4 = new VirtualPet("Epi", 10, 5, 20);
+
+    virtualPetRepository.save(pet1);
+    virtualPetRepository.save(pet2);
+    virtualPetRepository.save(pet3);
+    virtualPetRepository.save(pet4);
+
+    }
+
+    
 
 
 
