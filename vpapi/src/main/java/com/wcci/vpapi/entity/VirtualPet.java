@@ -1,55 +1,46 @@
 package com.wcci.vpapi.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "\"pet\"")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class VirtualPet {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "pet_id")
+    @Column()
     private Long id;
 
-    @Column(name = "Name")
+    @Column()
     private String name;
 
-    @Column(name = "Hunger")
-    private Integer hunger;
+    @Column()
+    private int hunger;
 
-    @Column(name = "Thirst")
-    private Integer thirst;
+    @Column()
+    private int thirst;
 
-    @Column(name = "Happiness")
-    private Integer happiness;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<VirtualPet> virtualPets;
+    @Column()
+    private int happiness;
 
     public VirtualPet() {
-        this.virtualPets = new ArrayList<>();
     }
 
-
-    public VirtualPet(String name, int hunger, int thirst, int happiness){
+    public VirtualPet(String name, int hunger, int thirst, int happiness) {
         this.name = name;
         this.hunger = hunger;
         this.thirst = thirst;
         this.happiness = happiness;
-        this.virtualPets = new ArrayList<>();
     }
 
     public VirtualPet(String name, int hunger, int thirst, int happiness, List<VirtualPet> virtualPets) {
@@ -57,15 +48,6 @@ public class VirtualPet {
         this.hunger = hunger;
         this.thirst = thirst;
         this.happiness = happiness;
-        this.virtualPets = virtualPets;
-    }
-
-    public Long getNameId() {
-        return id;
-    }
-
-    public void setNameId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -100,29 +82,12 @@ public class VirtualPet {
         this.happiness = happiness;
     }
 
-
     public Long getId() {
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
-
-
-    public List<VirtualPet> getVirtualPets() {
-        return virtualPets;
-    }
-
-
-    public void setVirtualPets(List<VirtualPet> virtualPets) {
-        this.virtualPets = virtualPets;
-    }
-
-    
-
-
-
 
 }

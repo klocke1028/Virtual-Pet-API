@@ -38,7 +38,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:8080/api/users/1"
+				"url": "http://localhost:8080/api/virtualpets/1"
 			},
 			"response": []
 		},
@@ -46,7 +46,8 @@
 			"name": "Remove Pet",
 			"request": {
 				"method": "DELETE",
-				"header": []
+				"header": [],
+				"url": "http://localhost:8080/api/virtualpets/1"
 			},
 			"response": []
 		}
