@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "85761853-b712-4fa4-bca6-13caabb60e47",
+		"name": "Virtual Pet Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36346641"
+	},
+	"item": [
+		{
+			"name": "Get All Pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/virtualpets"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Millie\",\r\n    \"hunger\": 10,\r\n    \"thirst\": 10,\r\n    \"happiness\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/virtualpets/newpet"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pet By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Pet",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

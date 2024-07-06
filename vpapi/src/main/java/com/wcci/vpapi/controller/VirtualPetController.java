@@ -1,4 +1,4 @@
-package come.wcci.vpapi.controller;
+package com.wcci.vpapi.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,13 +26,13 @@ public class VirtualPetController {
     @Autowired
     private VirtualPetService virtualPetService;
 
-    @PostMapping
+    @PostMapping("/newpet")
     public ResponseEntity<VirtualPet> addPet(@RequestBody VirtualPet virtualPet) {
         VirtualPet createdPet = virtualPetService.createPet(virtualPet);
         return new ResponseEntity<>(createdPet, HttpStatus.CREATED);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> removePet(@PathVariable Long id) {
         boolean isRemoved = virtualPetService.removePet(id);
         if (!isRemoved) {
